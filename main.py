@@ -1,27 +1,19 @@
 import os
-from flask import Flask, send_file, safe_join, abort
+from flask import Flask, send_file
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    try:
-        return send_file("src/index.html")
-    except FileNotFoundError:
-        abort(404)
+    return send_file('src/index.html')
 
-@app.route("/favicon.png")
+
+@app.route("/static/<path:path>")
 def favicon():
-    path = safe_join("src/static/icons", "favicon.png")
-    try:
-        return send_file(path, mimetype="image/png")
-    except FileNotFoundError:
-        abort(404)
+        return send_file('src/static/icons/favicon.ico',mimetype='image/vnd.microsoft.icon')
 
 def main():
-    port = int(os.environ.get("PORT", 80))
-    # host="0.0.0.0" permite acesso externo e facilita deploy
-    app.run(host="0.0.0.0", port=port, debug=True)
+    app.run(port=int(os.environ.get('PORT', 80)))
 
 if __name__ == "__main__":
     main()
