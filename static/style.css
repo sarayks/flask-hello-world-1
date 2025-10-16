@@ -1,0 +1,43 @@
+/* Reset básico para remover estilos padrão do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6e6ff; /* fundo roxinho claro */
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Estilo do título */
+h1 {
+  text-align: center;
+  color: #6a0dad; /* roxo escuro */
+  margin-bottom: 20px;
+}
+
+/* Subtítulos */
+h2 {
+  color: #8a2be2;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+/* Listas */
+ul, ol {
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+
+/* Imagens */
+img {
+  display: block;
+  margin: 20px auto;
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
